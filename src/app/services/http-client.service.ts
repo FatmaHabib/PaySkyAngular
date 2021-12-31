@@ -26,17 +26,14 @@ export class HttpClientService {
     headerOptions: HeaderOptions[] = null
   ): any {
     const requestHeaders = new Headers();
+    debugger;
     if (contentType !== null) {
       requestHeaders.set("Content-Type", contentType);
     }
     requestHeaders.set("Access-Control-Allow-Origin", "*");
     if(localStorage.getItem('authToken'))
-    {
-      let authToken = localStorage.getItem('auth_token');
+      requestHeaders.set("Authorization", localStorage.getItem('authToken').toString());
 
-      requestHeaders.set("Authorization",`Bearer ${authToken}`);
-
-    }
     if (headerOptions !== null) {
       headerOptions.map((h) => {
         requestHeaders.set(h.name, h.value);
