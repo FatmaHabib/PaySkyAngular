@@ -1,0 +1,61 @@
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+  <form  #CardData = "ngForm" (ngSubmit) = "onClickSubmit(CardData.value)">
+    <div class="form-group">
+      <label >Processing Code</label>
+      <input type="number" class="form-control" (keypress)="checkValue($event)" name="ProcessingCode"  placeholder="Enter Processing Code" ngModel>
+    </div>
+    <div class="form-group">
+      <label >System Trace Nmber</label>
+      <input type="number" class="form-control" (keypress)="checkValue($event)" name="SystemTraceNr"  placeholder="Enter System Trace Number" ngModel>
+    </div>
+    <div class="form-group">
+      <label >Function Code</label>
+      <input type="number" class="form-control"(keypress)="checkValue($event)"  name="FunctionCode"  placeholder="Enter Function Code" ngModel>
+    </div>
+    <div class="form-group">
+      <label >Card No</label>
+      <input type="number" class="form-control" (keypress)="checkValue($event)" name="CardNo" placeholder="Enter Card No" ngModel>
+    </div>
+    <div class="form-group">
+      <label >Card Holder </label>
+      <input type="text" class="form-control" name="CardHolder"  placeholder="Enter Card Holder" ngModel>
+    </div>
+    <div class="form-group">
+      <label >Amount Trxn</label>
+      <input type="number" class="form-control" (keypress)="checkValue($event)"  name="AmountTrxn" placeholder="Enter Amount Trxn" ngModel>
+    </div>
+    <div class="form-group">
+      <label >Currency Code</label>
+      <input type="number" class="form-control" (keypress)="checkValue($event)" name="CurrencyCode" placeholder="Enter Currency Code" ngModel>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+    <div class="row"  *ngIf="response.approvalCode">
+  <div >
+    <label >Response Code: </label>
+    <label >{{response.responseCode}}</label>
+  </div>
+  <div >
+    <label >Message:  </label>
+    <label>{{response.message}}</label>
+  </div>
+  <div >
+    <label >Approval Code: </label>
+    <label>{{response.approvalCode}}</label>
+  </div>
+  <div >
+    <label >Date Time: </label>
+    <label >{{response.dateTime}}</label>
+  </div>
+    </div>
+  
+                </div>
+                </div>
+        </div>
+    </div>
+   </div>
